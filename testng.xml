@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test  name="/home/olehk-homik/IdeaProjects/Framework_Ytube">
+        <classes>
+            <class name="tests.Login.SuccessLoginTest">
+            </class>
+            <class name="tests.Login.LoginWithTest"></class>
+            <class name="tests.Login.RestorePassTest"></class>
+            <class name="tests.Login.SuccessLoginTest"></class>
+            <class name="tests.LeadsPage.ToolBar.openToolBar"></class>
+        </classes>
+    </test>
+</suite>

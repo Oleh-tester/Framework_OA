@@ -1,0 +1,4 @@
+./src/main/java/constants/Constant.java
+./tests.LeadsPage.ToolBar/DisplayingColumn
+# Project exclude paths
+/target/

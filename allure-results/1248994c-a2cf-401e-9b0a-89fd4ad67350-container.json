@@ -1,0 +1,1 @@
+{"uuid":"1248994c-a2cf-401e-9b0a-89fd4ad67350","name":"tests.Login.LoginWithTest","start":1639676219828,"stop":1639676259336,"children":["fc71ce2a-60d5-4dae-992b-973f3806d51c","3e954e0f-a15b-4e53-9d72-07558ac4d742"],"afters":[{"name":"close","status":"passed","stage":"finished","description":"","start":1639676237446,"stop":1639676237515}]}
