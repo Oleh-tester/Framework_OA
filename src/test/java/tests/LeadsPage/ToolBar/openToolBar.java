@@ -9,7 +9,7 @@ import static constants.Constant.Urls.OASIS_LOGIN;
 
 public class openToolBar extends BaseTest {
     /**
-     * логін юзера треба винести в окремий метод для логін пейджі, щоб кожен раз не вставляти купу тих рядків
+     * логін юзера виніс в окремий метод щоб не писати кожен раз
      */
     @Test
     public void checkboxesByDefault() {
