@@ -1,5 +1,5 @@
-./src/main/java/constants/Constant.java
-./tests.LeadsPage.ToolBar/DisplayingColumn
+/src/main/java/constants/Constant.java
+/tests.LeadsPage.ToolBar/DisplayingColumn
 /allure-results
 # Project exclude paths
 /target/
