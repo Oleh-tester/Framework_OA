@@ -8,9 +8,6 @@ import static constants.Constant.AuthAdmin.pass;
 import static constants.Constant.Urls.OASIS_LOGIN;
 
 public class openToolBar extends BaseTest {
-    /**
-     * логін юзера виніс в окремий метод щоб не писати кожен раз
-     */
     @Test
     public void checkboxesByDefault() {
         //WHEN LOGIN
