@@ -7,7 +7,7 @@ import static constants.Constant.AuthAdmin.email;
 import static constants.Constant.AuthAdmin.pass;
 import static constants.Constant.Urls.OASIS_LOGIN;
 
-public class openToolBar extends BaseTest {
+public class OpenToolBar extends BaseTest {
     /**
      * логін юзера треба винести в окремий метод для логін пейджі, щоб кожен раз не вставляти купу тих рядків
      */

@@ -8,7 +8,7 @@
             <class name="tests.Login.LoginWithTest"></class>
             <class name="tests.Login.RestorePassTest"></class>
             <class name="tests.Login.SuccessLoginTest"></class>
-            <class name="tests.LeadsPage.ToolBar.openToolBar"></class>
+            <class name="tests.LeadsPage.ToolBar.OpenToolBar"></class>
         </classes>
     </test>
 </suite>
