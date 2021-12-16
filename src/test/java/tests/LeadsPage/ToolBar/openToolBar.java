@@ -15,10 +15,8 @@ public class openToolBar extends BaseTest {
     public void checkboxesByDefault() {
         //WHEN LOGIN
         basePage.open(OASIS_LOGIN);
-        loginPage.checkUpdate()
-                .setEmail(email)
-                .setPass(pass)
-                .clickLogin();
+        loginPage.checkUpdate();
+        loginPage.successLogin(email,pass);
         leadsPage.checkLeadsAreLoaded();
         driver.findElement(leadsPage.getToolBarButton()).click();
         driver.findElement(leadsPage.getColumnChooser()).click();
