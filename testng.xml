@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test  name="/home/olehk-homik/IdeaProjects/Framework_Ytube">
+    <test  name="/home/olehk-homik/IdeaProjects/Framework_OA">
+        <parameter name="emailDev" value="config.properties({})"></parameter>
         <classes>
             <class name="tests.Login.SuccessLoginTest">
             </class>

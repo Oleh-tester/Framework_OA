@@ -3,16 +3,13 @@ package tests.LeadsPage.ToolBar;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import tests.BaseTest;
-import static constants.Constant.AuthAdmin.email;
-import static constants.Constant.AuthAdmin.pass;
-import static constants.Constant.Urls.OASIS_LOGIN;
 
 public class DisplayingColumn extends BaseTest {
     @Test
     public void verifyColumnDisplaying() {
-        basePage.open(OASIS_LOGIN);
+        basePage.open(testData.getAppLoginUrl());
         loginPage.checkUpdate();
-        loginPage.successLogin(email,pass);
+        loginPage.successLogin(testData.getEmailDev(), testData.getPassDev());
         leadsPage.checkLeadsAreLoaded();
         driver.findElement(leadsPage.getToolBarButton()).click();
         driver.findElement(leadsPage.getColumnChooser()).click();

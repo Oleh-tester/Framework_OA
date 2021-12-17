@@ -3,27 +3,24 @@ package tests.Login;
 import constants.Constant;
 import org.testng.annotations.Test;
 import tests.BaseTest;
-import static constants.Constant.AuthAdmin.email;
-import static constants.Constant.AuthAdmin.pass;
-import static constants.Constant.Urls.OASIS_LOGIN;
-
 public class LoginWithTest extends BaseTest {
     @Test
-    public void wrongEmail(){
-        basePage.open(OASIS_LOGIN);
+    public void wrongEmail() {
+        basePage.open(testData.getAppLoginUrl());
         loginPage.checkUpdate()
-                .setEmail(email + "1") //wrong email
-                .setPass(pass)
+                .setEmail(testData.getEmailDev() + "1") //wrong email
+                .setPass(testData.getPassDev())
                 .clickLogin();
         loginPage.checkError();
 
     }
+
     @Test
     public void wrongPass() {
-        basePage.open(OASIS_LOGIN);
+        basePage.open(testData.getAppLoginUrl());
         loginPage.checkUpdate()
-                .setEmail(email)
-                .setPass(pass + "a") //wrong pass
+                .setEmail(testData.getEmailDev())
+                .setPass(testData.getPassDev() + "a") //wrong pass
                 .clickLogin();
         loginPage.checkError();
 

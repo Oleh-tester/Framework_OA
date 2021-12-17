@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static common.Config.PLATFORM_AND_BROWSER;
 
 public class CommonActions {
-    public static WebDriver createDriver(){
+    public static WebDriver createDriver() {
         WebDriver driver = null;
 
         switch (PLATFORM_AND_BROWSER) {
@@ -18,6 +18,6 @@ public class CommonActions {
         }
         driver.manage().window().maximize();
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
-    return driver;
+        return driver;
     }
 }
