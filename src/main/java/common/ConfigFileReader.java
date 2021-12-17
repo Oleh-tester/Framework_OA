@@ -53,12 +53,17 @@ public class ConfigFileReader {
     }
     public String getUpgradeUrl(){
         String UPGRADE_PAGE = properties.getProperty("UPGRADE_PAGE");
-        if (UPGRADE_PAGE != null) return UPGRADE_PAGE;
+       if (UPGRADE_PAGE != null) return UPGRADE_PAGE;
         else throw new RuntimeException("UPGRADE_PAGE Url not specified in the Configuration.properties file.");
     }
     public String getDriverPath() {
         String chromeDriverPath = properties.getProperty("driverPath");
         if (chromeDriverPath != null) return chromeDriverPath;
         else throw new RuntimeException("driverPath isn't specified on the Configuration.properties file.");
+    }
+    public String getImplicitWait(){
+        String ImplicitWait = properties.getProperty("IMPLICIT_WAIT");
+        if (ImplicitWait != null) return ImplicitWait;
+        else throw new RuntimeException("IMPLICIT_WAIT isn't specified on the Configuration.properties file.");
     }
 }

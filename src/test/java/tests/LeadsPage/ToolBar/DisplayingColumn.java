@@ -8,7 +8,7 @@ public class DisplayingColumn extends BaseTest {
     @Test
     public void verifyColumnDisplaying() {
         basePage.open(testData.getAppLoginUrl());
-        loginPage.checkUpdate();
+        loginPage.checkUpdate(testData.getUpgradeUrl());
         loginPage.successLogin(testData.getEmailDev(), testData.getPassDev());
         leadsPage.checkLeadsAreLoaded();
         driver.findElement(leadsPage.getToolBarButton()).click();

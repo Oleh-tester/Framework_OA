@@ -8,7 +8,7 @@ public class OpenToolBar extends BaseTest {
     public void checkboxesByDefault() {
         //WHEN LOGIN
         basePage.open(testData.getAppLoginUrl());
-        loginPage.checkUpdate()
+        loginPage.checkUpdate(testData.getUpgradeUrl())
                 .successLogin(testData.getEmailDev(), testData.getPassDev());
         leadsPage.checkLeadsAreLoaded();
         driver.findElement(leadsPage.getToolBarButton()).click();
@@ -16,6 +16,4 @@ public class OpenToolBar extends BaseTest {
 
         leadsPage.verifyCheckboxes();
     }
-} /* WebElement checkbox = driver.findElement(leadsPage.getCrDateCheckbox());
-        Actions actions = new Actions(driver);     /** інший варіант як можна реалізувати той клік
-        actions.moveToElement(checkbox).click().click(checkbox).build().perform();*/
+}

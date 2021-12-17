@@ -1,73 +1,56 @@
 package pages.LoginPage;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.BasePage;
+import pageElements.LoginPageElements;
 
 import java.time.Duration;
 
 import static constants.Constant.TimeoutVariable.IMPLICIT_WAIT;
 
-public class LoginPage extends BasePage {
+public class LoginPage extends LoginPageElements {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    private final By emailField = By.id("login-field-email");
-    private final By passField = By.id("login-field-password");
-    private final By loginButton = By.xpath("//*[contains(text(),'Log In')]");
-    private final By updButton = By.xpath("//*[contains(text(),'Upgrade')]");
-    private final By errorMessage = By.xpath("//*[contains(@class, 'form-message')] "); // same as //*[contains(text(),'Invalid user id or password')]
-    private final By forgotPass = By.linkText("Forgot Password");
-    private final By emailForRestorePassField = By.id("request-email-field");
-    private final By submitRestore = By.xpath("//*[contains(text(),'Submit')]");
-
-    /**
-     * можна подобавляти геттери і сеттери і тоді через них ініціалізувати ті локатори в самому тесті
-     */
-    public By getLoginButton() {
-        return loginButton;
-    }
-
-    public LoginPage checkUpdate() {
-        if (driver.getCurrentUrl().contains(testData.getUpgradeUrl())) {
-            driver.findElement(updButton).click();
+    public LoginPage checkUpdate(String url) {
+        if (driver.getCurrentUrl().equals(url)) {
+            driver.findElement(getUpdButton()).click();
         }
         return this;
     }
 
     public LoginPage setEmail(String email) {
-        driver.findElement(emailField).sendKeys(email);
+        driver.findElement(getEmailField()).sendKeys(email);
         return this;
     }
 
     public LoginPage setPass(String pass) {
-        driver.findElement(passField).sendKeys(pass);
+        driver.findElement(getPassField()).sendKeys(pass);
         return this;
     }
 
     public LoginPage clickLogin() {
-        driver.findElement(loginButton).click();
+        driver.findElement(getLoginButton()).click();
         return this;
     }
 
-    public LoginPage checkUrlAfterLogin() {
+    public LoginPage checkUrlAfterLogin(String url) {
         new WebDriverWait(driver, Duration.ofSeconds(IMPLICIT_WAIT)).until(ExpectedConditions
-                .urlToBe(testData.getDefaultAfterLogin()));
+                .urlToBe(url));
         return this;
     }
 
     public LoginPage checkError() {
         new WebDriverWait(driver, Duration.ofSeconds(IMPLICIT_WAIT)).until(ExpectedConditions
-                .presenceOfElementLocated(errorMessage));
+                .presenceOfElementLocated(getErrorMessage()));
         return this;
     }
 
     public LoginPage forgotPassClick() {
-        WebElement buttonForgot = driver.findElement(forgotPass);
+        WebElement buttonForgot = driver.findElement(getForgotPass());
         if (buttonForgot.isDisplayed()) { //useless check, just for studying
             buttonForgot.click();
         }
@@ -75,7 +58,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage setRequestedEmail(String email) {
-        WebElement restoreEmailField = driver.findElement(emailForRestorePassField);
+        WebElement restoreEmailField = driver.findElement(getEmailForRestorePassField());
         if (restoreEmailField.isDisplayed()) {
             restoreEmailField.sendKeys(email);
         }
@@ -83,7 +66,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage clickSubmit() {
-        driver.findElement(submitRestore).click();
+        driver.findElement(getSubmitRestore()).click();
         return this;
     }
 
@@ -91,7 +74,6 @@ public class LoginPage extends BasePage {
         setEmail(email);
         setPass(pass);
         clickLogin();
-        checkUrlAfterLogin();
         return this;
     }
 
