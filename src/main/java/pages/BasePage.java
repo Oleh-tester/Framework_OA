@@ -1,5 +1,6 @@
 package pages;
 
+import common.ConfigFileReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,7 @@ import static constants.Constant.TimeoutVariable.IMPLICIT_WAIT;
 
 public class BasePage {
     protected WebDriver driver;
+    protected ConfigFileReader testData;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
