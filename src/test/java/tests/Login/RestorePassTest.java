@@ -12,7 +12,7 @@ public class RestorePassTest extends BaseTest {
         basePage.open(testData.getAppLoginUrl());
         loginPage.checkUpdate(testData.getUpgradeUrl())
                 .forgotPassClick();
-        Assert.assertFalse(driver.findElement(loginPageElements.getSubmitRestore()).isEnabled());
+        Assert.assertFalse(driver.findElement(loginPageElements.getSubmitRestore()).isEnabled()); //button should be disabled
         loginPage.setRequestedEmail(testData.getEmailDev())
                 .clickSubmit()
                 .waitLocator(loginPage.getNewPassFormText());

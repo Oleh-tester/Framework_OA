@@ -10,11 +10,12 @@ import java.time.Duration;
 
 public class SuccessLoginTest extends BaseTest {
 
-    @Test
+    @Test  //
     public void checkLogin() {
         basePage.open(testData.getAppLoginUrl());
-        loginPage.checkUpdate(testData.getUpgradeUrl())
-                .setEmail(testData.getEmailDev())
+        loginPage.checkUpdate(testData.getUpgradeUrl());
+        Assert.assertFalse(driver.findElement(loginPageElements.getLoginButton()).isEnabled());//button should be disabled
+        loginPage.setEmail(testData.getEmailDev())
                 .setPass(testData.getPassDev())
                 .clickLogin();
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions

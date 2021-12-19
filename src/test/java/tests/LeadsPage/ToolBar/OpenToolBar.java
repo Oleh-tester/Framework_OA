@@ -13,7 +13,6 @@ public class OpenToolBar extends BaseTest {
         leadsPage.checkLeadsAreLoaded();
         driver.findElement(leadsPage.getToolBarButton()).click();
         driver.findElement(leadsPage.getColumnChooser()).click();
-
         leadsPage.verifyCheckboxes();
     }
 }
