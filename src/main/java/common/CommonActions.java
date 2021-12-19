@@ -2,17 +2,22 @@ package common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-import static common.Config.PLATFORM_AND_BROWSER;
+import static common.ConfigVariables.PLATFORM_AND_BROWSER;
 
 public class CommonActions {
     public static WebDriver createDriver() {
         WebDriver driver = null;
 
         switch (PLATFORM_AND_BROWSER) {
-            case "lin_chrome":
+            case "lin_chrome": //можна було б шлях до вебдрайвера винести в проперті, але я не побачив плюсів в тому
                 System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
                 driver = new ChromeDriver();
+                break;
+            case "lin_firefox":
+                System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
+                driver = new FirefoxDriver();
                 break;
             default:
         }

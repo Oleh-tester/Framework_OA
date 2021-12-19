@@ -1,18 +1,19 @@
 package tests.Login;
 
-import constants.Constant;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
+
 public class LoginWithTest extends BaseTest {
     @Test
     public void wrongEmail() {
         basePage.open(testData.getAppLoginUrl());
         loginPage.checkUpdate(testData.getUpgradeUrl())
-                .setEmail(testData.getEmailDev() + "1") //wrong email
+                .setEmail( "d" + testData.getEmailDev()) //wrong email
                 .setPass(testData.getPassDev())
-                .clickLogin();
-        loginPage.checkError();
-
+                .clickLogin()
+                .waitLocator(loginPage.getErrorMessage());
+        Assert.assertTrue(driver.findElement(loginPage.getErrorMessage()).isDisplayed());
     }
 
     @Test
@@ -21,8 +22,9 @@ public class LoginWithTest extends BaseTest {
         loginPage.checkUpdate(testData.getUpgradeUrl())
                 .setEmail(testData.getEmailDev())
                 .setPass(testData.getPassDev() + "a") //wrong pass
-                .clickLogin();
-        loginPage.checkError();
+                .clickLogin()
+                .waitLocator(loginPage.getErrorMessage());
+        Assert.assertTrue(driver.findElement(loginPage.getErrorMessage()).isDisplayed());
 
     }
 

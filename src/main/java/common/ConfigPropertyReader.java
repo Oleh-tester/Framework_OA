@@ -6,13 +6,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfigFileReader {
+public class ConfigPropertyReader {
 
     private Properties properties;
     private final String propertyFilePath = "src/main/resources/config.properties";
 
 
-    public ConfigFileReader() {
+    public ConfigPropertyReader() {
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(propertyFilePath));
@@ -56,14 +56,10 @@ public class ConfigFileReader {
        if (UPGRADE_PAGE != null) return UPGRADE_PAGE;
         else throw new RuntimeException("UPGRADE_PAGE Url not specified in the Configuration.properties file.");
     }
-    public String getDriverPath() {
-        String chromeDriverPath = properties.getProperty("driverPath");
-        if (chromeDriverPath != null) return chromeDriverPath;
-        else throw new RuntimeException("driverPath isn't specified on the Configuration.properties file.");
+    public String getNewPass(){
+        String newPass = properties.getProperty("newPass");
+        if (newPass != null) return newPass;
+        else throw new RuntimeException("newPass not specified in the Configuration.properties file. ");
     }
-    public String getImplicitWait(){
-        String ImplicitWait = properties.getProperty("IMPLICIT_WAIT");
-        if (ImplicitWait != null) return ImplicitWait;
-        else throw new RuntimeException("IMPLICIT_WAIT isn't specified on the Configuration.properties file.");
-    }
+
 }

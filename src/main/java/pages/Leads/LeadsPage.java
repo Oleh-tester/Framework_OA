@@ -6,21 +6,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageElements.LeadsPageElements;
-import pages.LoginPage.LoginPage;
 
 import java.time.Duration;
 
-import static constants.Constant.TimeoutVariable.EXPLICIT_WAIT;
+import static common.ConfigVariables.TimeoutVariable.sevenSec;
 
 public class LeadsPage extends LeadsPageElements {
     public LeadsPage(WebDriver driver) {
         super(driver);
     }
+
     public LeadsPage verifyCheckboxes() {
-        for (int i = 0; i < getColumns().length; i++) {
-            WebElement columnCheckbox = driver.findElement(By.xpath(("//*[contains(@aria-label, '" + getColumns()[i] + "') " +
-                    "and contains(@class,'checkbox') and contains(@aria-selected,'true')]"))); //локатор чекнутого чекбокса
-            if (columnCheckbox.isEnabled()) {
+        for (int i = 0; i < columns.length; i++) {
+            WebElement columnCheckbox = driver.findElement(By.xpath(("//*[contains(@aria-label, '"
+                    + getColumns()[i] + "') " + "and contains(@class,'checkbox') " +
+                    "and contains(@aria-selected,'true')]"))); //локатор чекнутого чекбокса
+            if (columnCheckbox.isEnabled(
+            )) {
             } else {
                 System.out.println("bad Job Oleh");
             }
@@ -29,8 +31,8 @@ public class LeadsPage extends LeadsPageElements {
     }
 
     public LeadsPage checkLeadsAreLoaded() {
-        WebElement element = (new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT)).
-                until(ExpectedConditions.presenceOfElementLocated(getLoadLeads())));
+        WebElement element = (new WebDriverWait(driver, Duration.ofSeconds(sevenSec)).
+                until(ExpectedConditions.presenceOfElementLocated(loadLeads)));
         return this;
     }
 

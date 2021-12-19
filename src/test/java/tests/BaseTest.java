@@ -1,7 +1,7 @@
 package tests;
 
 import common.CommonActions;
-import common.ConfigFileReader;
+import common.ConfigPropertyReader;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -11,12 +11,12 @@ import pages.BasePage;
 import pages.Leads.LeadsPage;
 import pages.LoginPage.LoginPage;
 
-import static common.Config.CLEAR_COOKS_AND_STORAGE;
-import static common.Config.HOLD_BROWSER_OPEN;
+import static common.ConfigVariables.CLEAR_COOKS_AND_STORAGE;
+import static common.ConfigVariables.HOLD_BROWSER_OPEN;
 
 public class BaseTest {
     protected WebDriver driver = CommonActions.createDriver();
-    protected ConfigFileReader testData = new ConfigFileReader();
+    protected ConfigPropertyReader testData = new ConfigPropertyReader();
     protected BasePage basePage = new BasePage(driver);
     protected LoginPage loginPage = new LoginPage(driver);
     protected LeadsPage leadsPage = new LeadsPage(driver);

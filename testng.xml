@@ -3,8 +3,6 @@
 <suite name="All Test Suite">
     <test  name="/home/olehk-homik/IdeaProjects/Framework_OA">
         <classes>
-            <class name="tests.Login.SuccessLoginTest">
-            </class>
             <class name="tests.Login.LoginWithTest"></class>
             <class name="tests.Login.RestorePassTest"></class>
             <class name="tests.Login.SuccessLoginTest"></class>
