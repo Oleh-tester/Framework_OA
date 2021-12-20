@@ -9,7 +9,7 @@ public class LoginWithTest extends BaseTest {
     public void wrongEmail() {
         basePage.open(testData.getAppLoginUrl());
         loginPage.checkUpdate(testData.getUpgradeUrl())
-                .setEmail( "d" + testData.getEmailDev()) //wrong email
+                .setEmail("d" + testData.getEmailDev()) //wrong email
                 .setPass(testData.getPassDev())
                 .clickLogin()
                 .waitLocator(loginPage.getErrorMessage());

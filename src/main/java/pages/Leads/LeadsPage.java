@@ -17,17 +17,17 @@ public class LeadsPage extends LeadsPageElements {
     }
 
     public LeadsPage verifyCheckboxes() throws InterruptedException {
-        for (int i = 0; i < columns.length; i++) {
+        for (int i = 0; i < columns.length - 1; i++) {
             WebElement columnCheckbox = driver.findElement(By.xpath(("//*[contains(@aria-label, '"
                     + getColumns()[i] + "') " + "and contains(@class,'checkbox') " +
                     "and contains(@aria-selected,'true')]")));
             //локатор чекнутого чекбокса
             if (columnCheckbox.isDisplayed()) {
-            } else if (columnCheckbox.isDisplayed() == false){
-               scrollTill(columnCheckbox);
+            } else if (columnCheckbox.isDisplayed() == false) {
+                scrollTill(columnCheckbox);
             } else
                 throw new RuntimeException("Column " + getColumns()[i] + " isn't displayed");
-            }
+        }
         return this;
     }
 

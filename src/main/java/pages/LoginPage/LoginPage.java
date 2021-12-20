@@ -58,6 +58,7 @@ public class LoginPage extends LoginPageElements {
         clickLogin();
         return this;
     }
+
     public LoginPage fillInSavePassForm(String newPass) {
         driver.findElement(temporaryPassField).sendKeys("tempPass21");
         driver.findElement(newPassField).sendKeys(newPass);

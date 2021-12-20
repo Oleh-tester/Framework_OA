@@ -22,6 +22,7 @@ public class BaseTest {
     protected LeadsPage leadsPage = new LeadsPage(driver);
     protected LeadsPageElements leadsPageElements = new LeadsPageElements(driver);
     protected LoginPageElements loginPageElements = new LoginPageElements(driver);
+
     public void clearCookiesAndLocalStorage() {
         if (CLEAR_COOKS_AND_STORAGE) {
             JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;

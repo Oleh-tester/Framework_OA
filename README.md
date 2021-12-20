@@ -1,6 +1,6 @@
 # Summary
 
-This automation framework was written by the author for educational purposes only😃
+This automation framework was written by the author for educational purposes only
 
 ## Installation
 

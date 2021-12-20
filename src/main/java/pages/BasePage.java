@@ -26,7 +26,8 @@ public class BasePage {
         new WebDriverWait(driver, Duration.ofSeconds(second)).until(ExpectedConditions.presenceOfElementLocated(locator));
         return locator;
     }
-    public BasePage  scrollTill(WebElement element) throws InterruptedException {
+
+    public BasePage scrollTill(WebElement element) throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
         Thread.sleep(500);
         return this;

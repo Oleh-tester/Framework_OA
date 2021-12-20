@@ -18,7 +18,7 @@ public class LeadsPageElements extends BasePage {
             "and contains(@aria-label,'column-chooser')]");
     public static String[] columns = {"Create Date", "Market", "Status", "Reference ID", "Appointment Date",
             "Appointment Date", "First Name", "Last Name", "Address", "City", "Zip Code", "Cell Phone",
-            "Installation Types", "Rooms", "Promotion", "Sales Rep", "Last Note", "Next Action Date" };
+            "Installation Types", "Rooms", "Promotion", "Sales Rep", "Last Note", "Next Action Date"};
     public static final By statusColumn = By.xpath("//*[contains(@aria-label,'Column Status') and @id='dx-col-45']");
 
     public By getUserName() {
