@@ -16,17 +16,18 @@ public class LeadsPage extends LeadsPageElements {
         super(driver);
     }
 
-    public LeadsPage verifyCheckboxes() throws InterruptedException {
-        for (int i = 0; i < columns.length - 1; i++) {
+    public LeadsPage verifyCheckedCheckboxes() throws InterruptedException {
+        for (int i = 0; i < columns.length; i++) {
             WebElement columnCheckbox = driver.findElement(By.xpath(("//*[contains(@aria-label, '"
-                    + getColumns()[i] + "') " + "and contains(@class,'checkbox') " +
+                    + columns[i] + "') " + "and contains(@class,'checkbox') " +
                     "and contains(@aria-selected,'true')]")));
             //локатор чекнутого чекбокса
             if (columnCheckbox.isDisplayed()) {
+                System.out.println(columns[i]);
             } else if (columnCheckbox.isDisplayed() == false) {
                 scrollTill(columnCheckbox);
             } else
-                throw new RuntimeException("Column " + getColumns()[i] + " isn't displayed");
+                throw new RuntimeException("Column " + columns[i] + " isn't displayed");
         }
         return this;
     }

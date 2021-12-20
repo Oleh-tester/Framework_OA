@@ -40,7 +40,7 @@ public class LoginPage extends LoginPageElements {
     }
 
     public LoginPage setRequestedEmail(String email) {
-        WebElement restoreEmailField = driver.findElement(getEmailForRestorePassField());
+        WebElement restoreEmailField = driver.findElement(emailForRestorePassField);
         if (restoreEmailField.isDisplayed()) {
             restoreEmailField.sendKeys(email);
         }

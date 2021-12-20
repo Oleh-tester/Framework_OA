@@ -14,6 +14,6 @@ public class OpenToolBar extends BaseTest {
         driver.findElement(leadsPage.getColumnChooser()).click();
       /*  driver.findElement(leadsPageElements.getStatusColumnCheckbox()).click();
         driver.findElement(leadsPageElements.getStatusColumnCheckbox()).click();*/
-        leadsPage.verifyCheckboxes();
+        leadsPage.verifyCheckedCheckboxes();
     }
 }
