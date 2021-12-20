@@ -1,11 +1,12 @@
 package tests.LeadsPage.ToolBar;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
 
 public class OpenToolBar extends BaseTest {
     @Test
-    public void checkboxesByDefault() {
+    public void checkboxesByDefault() throws InterruptedException {
         //WHEN LOGIN
         basePage.open(testData.getAppLoginUrl());
         loginPage.checkUpdate(testData.getUpgradeUrl())

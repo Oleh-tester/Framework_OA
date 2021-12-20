@@ -7,6 +7,6 @@ public class ConfigVariables {
 
     public static class TimeoutVariable {
         public static final int second = 1;
-        public static final int sevenSec = 7;
+        public static final int tenSec = 10;
     }
 }

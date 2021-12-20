@@ -12,8 +12,8 @@ public class LeadsPageElements extends BasePage {
     public static final By userName = By.className("nav-username");
     public static final By loadLeads = By.xpath("//*[contains(text(),'Page')]");
     public static final By toolBarButton = By.id("toolbar-menu-button");
-    public static final By statusColumnCheckbox = By.xpath("//*[contains(@aria-label, 'Status')]" +
-            "//*[contains(@class,'checkbox-icon')]");
+    public static final By statusColumnCheckbox = By.xpath("//li[contains(@aria-label,'Status')]" +
+            "//span[contains(@class,'dx-checkbox-icon')]");
     public static final By columnChooser = By.xpath("//*[contains(@class,'toolbar-button-icon') " +
             "and contains(@aria-label,'column-chooser')]");
     public static String[] columns = {"Create Date", "Market", "Status", "Reference ID", "Appointment Date",
